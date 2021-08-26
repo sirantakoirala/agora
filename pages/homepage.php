@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if (!$_SESSION['email']) {
+
+    header("Location: ../index.php"); //redirect to the login page to secure the welcome page without login access.  
+}
+
+?>
+
 <html>
  <head>
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
@@ -38,6 +47,13 @@
                 
                 </div>
             </section>
+     
+            <h1>Welcome</h1><br>
+            <?php
+                echo $_SESSION['email'];
+            ?>
+            <h1><a href="../php/logout.php">Logout here</a> </h1>
+     
             <footer>
 
             </footer>

@@ -59,9 +59,8 @@ nav ul{
  nav ul li{
           list-style:none;
           padding-top: 42px;
-        
-
 }
+
 nav ul li a{
     text-decoration: none;
     color: grey;
@@ -70,6 +69,26 @@ nav ul li a:hover {
     color:red
 
 }
+
+.Askquestion{
+    padding-left: 250px;
+}
+h2{
+text-align: left;
+}
+
+.textarea_container textarea{
+ 
+
+        margin-top: -32px;
+        margin-left: 248px;
+        resize:none;
+   }
+   .textarea_container button { 
+    margin-left: 982px;
+    margin-top: -37px;
+   }
+
 
 
 

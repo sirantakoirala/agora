@@ -25,7 +25,7 @@ session_start(); //session starts here
                         <h3 class="panel-title">Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="login.php">
+                        <form role="form" method="post" action="index.php">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>

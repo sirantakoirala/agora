@@ -13,9 +13,21 @@ if (!$_SESSION['email']) {
  <head>
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
      <title> Agora</title>
-     <link href="stylish.css" rel="stylesheet">   
+     <link href="../styles/main.css" rel="stylesheet">   
+     <link href="../pictures/logo.png" rel="icon">
  </head>   
-    
+
+ 
+
+  <style>
+  .agora {
+    margin-left: 41px;
+    font-size: 45;
+    font-size: 40px;
+    font-family: serif;
+  }
+  
+  </style>
         
 
 
@@ -27,19 +39,29 @@ if (!$_SESSION['email']) {
         <div class="container">
             <header>
                <div class="logo">
-                    <img src="logo.png" class="logo" >
+                    <img src="../pictures/logo5.png" class="logo" >
                 </div>
-                <h1> Agora </h1>
+                <div clas="agora">
+                <h1 class="agora"> Agora </h1>
+                </div>
                 <div class ="uicon">
-                    <img src="user icon.png" class="uicon" float="left">
+                    <img src="../pictures/uicon.png" class="uicon" float="left">
+                    
                 </div>
-            </header>
-              <section>
-              <h1>Welcome</h1><br>
-             <?php
+                <p class="welcome">Welcome</p><br>
+                <p class="display-email"><?php
                 echo $_SESSION['email'];
-             ?>
-            <h1><a href="../php/logout.php">Logout here</a> </h1>
+             ?> </p>
+
+        <a class="logout" href="../php/logout.php">Logout here</a> 
+
+            
+            </header>
+
+
+              <section>
+             
+              
                 <div class="sidebar">
                     <nav>
                         <ul>
@@ -63,6 +85,10 @@ if (!$_SESSION['email']) {
                      <button>Post</button>
                  
                </section>
+               
+             
+            
+
             <footer>
 
             </footer>
@@ -72,3 +98,4 @@ if (!$_SESSION['email']) {
     </body> 
     
 </html>
+

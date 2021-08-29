@@ -7,9 +7,77 @@
 <style>  
     .login-panel {  
         margin-top: 150px;  
-  
+    }
+
+    fieldset {
+        width: 550px;
+        margin-left: 400;
+    }
+    
+    .username {
+        margin-bottom: 10px;
+        margin-left: 77px;
+        font-size: 18px;
+    }
+
+
+    .email{
+        margin-bottom: 10px;
+        margin-left: 77px;
+        font-size:18px;
+    }
+
+    .password{
+        margin-bottom: 10px;
+        margin-left: 77px;
+        font-size:18px;
+    }
+
+    .btn-register {
+        margin-left: 77px;
+        font-size: 15px;
+        margin-left: 112px;
+    }
+    
+    .panel-title{
+        font-size: 25px;
+    margin-left: 606px;
+    margin-bottom: 10px;
+    }
+
+    hr {
+        width: 900px;
+        margin-left: 226px;
+    }
+    
+    .login-panel{
+        margin-top: 44px;
+    }
+
+    b{
+        margin-left: 57px;
+        font-size: 15px;
+    font-family: sans-serif;
+    }
+
+    a {
+        margin-left: 33px;
+    }
+
+
+    .iibit-logo{
+        height: 50px;
+    width: 100px;
+    margin-left: 25px;
+    margin-top: 6px;
+    }
+
+    
+
 </style>  
 <body>  
+<img src="../pictures/IIBIT.jpg" class="iibit-logo">
+            
   
 <div class="container"><!-- container class is used to centered  the body of the browser with some decent width-->  
     <div class="row"><!-- row class is used for grid system in Bootstrap-->  
@@ -18,26 +86,29 @@
                 <div class="panel-heading">  
                     <h3 class="panel-title">Registration</h3>  
                 </div>  
+                <hr> </hr>
                 <div class="panel-body">  
                     <form role="form" method="post" action="registration.php">  
                         <fieldset>  
-                            <div class="form-group">  
-                                <input class="form-control" placeholder="Username" name="name" type="text" autofocus>  
+                            <div class="username">  
+                                <input class="username" placeholder="Username" name="name" type="text" autofocus>  
                             </div>  
   
-                            <div class="form-group">  
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>  
+                            <div class="email">  
+                                <input class="email" placeholder="E-mail" name="email" type="email" autofocus>  
                             </div>  
-                            <div class="form-group">  
-                                <input class="form-control" placeholder="Password" name="pass" type="password" value="">  
+                            <div class="password">  
+                                <input class="password" placeholder="Password" name="pass" type="password" value="">  
                             </div>  
   
-  
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="register" >  
-  
+                            <div class="btn-register">
+                            <input class="btn-register" type="submit" value="Register" name="Register" >  
+                            </div>
                         </fieldset>  
                     </form>  
-                    <center><b>Already registered ?</b> <br></b><a href="../index.php">Login here</a></center><!--for centered text-->  
+                    <center>
+                        <b>Already registered ?</b> <br></b>
+                        <a href="../index.php">Login here</a></center><!--for centered text-->  
                 </div>  
             </div>  
         </div>  

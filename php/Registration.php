@@ -102,7 +102,7 @@
                             </div>  
   
                             <div class="btn-register">
-                            <input class="btn-register" type="submit" value="Register" name="Register" >  
+                            <input class="btn-register" type="submit" value="Register" name="register" >  
                             </div>
                         </fieldset>  
                     </form>  

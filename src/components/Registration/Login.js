@@ -7,28 +7,45 @@ import {
   Image,
   Message,
   Segment,
+  Dimmer,
+  Loader,
 } from "semantic-ui-react";
 import { useUserContext } from "../../context/userContext";
-import AgoraLogo from "../../images/logo.png";
+import AgoraLogo from "../../images/logo3.png";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const { signIn } = useUserContext();
+  const [isLogInInProgress, setIsLogInInProgress] = useState(false);
+  const [login, setLogin] = useState(false);
+  const navigate = useNavigate();
   const handleChange = (ev) => {
     setFormState((prev) => ({ ...prev, [ev.target.id]: ev.target.value }));
   };
 
-  const handleLogin = () => {
-    if (formState.email === "" || formState.password === "") return;
-    signIn(formState.email, formState.password);
+  const handleLogin = async (ev) => {
+    ev.preventDefault();
+
+    try {
+      setLogin(true);
+      console.log("LOGIN");
+      setIsLogInInProgress(true);
+      if (formState.email === "" || formState.password === "") return;
+      await signIn(formState.email, formState.password);
+      setLogin(false);
+      navigate("/dashboard");
+      //setIsLogInInProgress(false);
+    } catch (err) {
+      console.log(err);
+      setIsLogInInProgress(false);
+      setLogin(true);
+    }
   };
 
   return (
     <>
-      <Header as="h2" color="teal" textAlign="center">
-        <Image src={AgoraLogo} />
-        Agora
-      </Header>
+      <Image src={AgoraLogo} />
       <Form size="large" onSubmit={handleLogin}>
         <Segment stacked>
           <Form.Input
@@ -50,7 +67,13 @@ export const Login = () => {
           />
 
           <Button color="teal" fluid size="large" type="submit">
-            Login
+            {isLogInInProgress ? (
+              <Dimmer active>
+                <Loader size="mini">Loading</Loader>
+              </Dimmer>
+            ) : (
+              "Log In"
+            )}
           </Button>
         </Segment>
       </Form>
